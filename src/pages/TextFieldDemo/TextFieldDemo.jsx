@@ -4,7 +4,11 @@ import Textfield from '../../components/TextField/TextField'
 
 const test = ()=>{
    return (
-       <Textfield/>
+       <div>
+       <Textfield value = 'Access' />
+       <Textfield value = 'Disabled' />
+       <Textfield value = '' />
+       </div> 
    )
 }
 export default test; 
