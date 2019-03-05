@@ -3,17 +3,12 @@ h1{
 }
 .formControl{
     width: 70%;
-    /* height: 58px; */
+    height: 58px;
     font-size: 20px;
 }
-body {
-    padding-top: 0;
-    font-family: Helvetica Neue, Helvetica;
-    background: #d0cdcd;
-  }
-  .errorbox{
-      border: 1px solid red;
-  }
-  .error{
-      color: red;
-  }
+.errorbox{
+    border: 1px solid red;
+}
+.error{
+    color: red;
+}
