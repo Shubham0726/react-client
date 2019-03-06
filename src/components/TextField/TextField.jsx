@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-const test = (props) => {
+const TextField = (props) => {
     let input = null;
     const { value } = props;
     switch (value) {
@@ -24,4 +24,4 @@ const test = (props) => {
         </div>
     )
 }
-export default test;
+export default TextField;
