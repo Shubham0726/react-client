@@ -1,15 +1,16 @@
 import React from 'react'
 import Textfield from '../../components/TextField/TextField'
-import Slider from '../../components/Slider/Slider'
 
 
 const TextField = () => {
     return (
         <div>
-            <Slider />
-            <Textfield value='Access' />
+            This is Accessible Text Input
+            <Textfield value='' type="text"/>
+            This is Disabled Text Input
             <Textfield value='Disabled' />
-            <Textfield value='' />
+            Text Input with Error
+            <Textfield value='error' error="Error" />
         </div>
     )
 }

@@ -1,27 +1,35 @@
-import React from 'react'
-import './style.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import style from './style';
+
+const defaultProps = {
+    error: '',
+};
+
+const propTypes = {
+    error: PropTypes.string,
+    value: PropTypes.string.isRequired,
+};
+
 const TextField = (props) => {
-    let input = null;
-    const { value } = props;
-    switch (value) {
-        case 'Access':
-            input = <input type="text" className="formControl" placeholder="Accessible" />;
-            break;
-        case 'Disabled':
-            input = <input type="text" className="formControl" placeholder="Disabled Input" disabled="disabled" />;
-            break;
-        default:
-            input = (
-                <div className="error">
-                    <input type="text" className="errorbox formControl" placeholder="ERROR" />
-                    <p>Error field</p>
-                </div>
-            )
-    };
+    const { error } = props;
+
+    // If error, apply styling
+    const errorStyle = error ? style.errorInput : {};
+
     return (
-        <div>
-            {input}
-        </div>
-    )
-}
+        <>
+            <input style={{ ...style.base, ...errorStyle }} type="text" {...props} />
+            {
+                error && (
+                    <div style={style.error}>{error}</div>
+                )
+            }
+        </>
+    );
+};
+
+TextField.defaultProps = defaultProps;
+TextField.propTypes = propTypes;
+
 export default TextField;
